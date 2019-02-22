@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.macbookpro.ubeatz">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <!-- <meta-data -->
+        <!-- android:name="io.fabric.ApiKey" -->
+        <!-- android:value="YOUR_FABRIC_API_KEY" /> -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".loginandregister"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login"
+            android:parentActivityName=".loginandregister"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="redirect"
+                    android:scheme="sociallogin" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".register"
+            android:parentActivityName=".loginandregister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".verify"
+            android:parentActivityName=".register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- <activity android:name=".newsfeedFragment" /> -->
+        <!-- <activity android:name=".searchFragment" /> -->
+        <activity
+            android:name=".search"
+            android:parentActivityName=".main" />
+        <activity
+            android:name=".followers"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".followingandclosefriend"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".findbox"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".findbox_detail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".edit_profile"
+            android:screenOrientation="portrait" />
+        <activity android:name=".setting" />
+        <activity android:name=".messagingFragment" />
+        <!-- <activity android:name=".scanqr"></activity> -->
+        <activity android:name=".detail_trend_topic" />
+        <activity android:name=".new_song" />
+        <activity android:name=".song_detail" />
+        <activity android:name=".all_song" />
+        <activity android:name=".popular_song" />
+        <activity android:name=".hits_song" />
+        <activity android:name=".ubeatz_playlist" />
+        <activity android:name=".category" />
+        <activity android:name=".comment" />
+        <activity android:name=".customer_service" />
+        <activity android:name=".youtube"></activity>
+    </application>
+
+</manifest>

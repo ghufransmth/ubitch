@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "869766848949",
+    "firebase_url": "https://ubeatz-1544716842505.firebaseio.com",
+    "project_id": "ubeatz-1544716842505",
+    "storage_bucket": "ubeatz-1544716842505.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869766848949:android:63c03eebf5a7cea4",
+        "android_client_info": {
+          "package_name": "com.example.macbookpro.ubeatz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869766848949-1n7r8rissep1m172tabbnv11f3maqlmr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.macbookpro.ubeatz",
+            "certificate_hash": "86add06a77f27b374749d508fe08015220ac6c54"
+          }
+        },
+        {
+          "client_id": "869766848949-tapujtue4qo58fcopn3hl3o4vm51qppm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgFw43T60Tyq1PfUhEbN-O1wXZP8_se50"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869766848949-tapujtue4qo58fcopn3hl3o4vm51qppm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

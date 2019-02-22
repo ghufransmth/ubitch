@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0dp"
+    android:layout_marginTop="0dp"
+    android:focusableInTouchMode="true"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/fruitImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:background="@mipmap/ic_launcher_round"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/fruitName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/fruitImg"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="Cherry"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/button_login"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:text="Unfollow"
+        android:textAllCaps="false"
+        android:textColor="#fff" />
+
+</RelativeLayout>

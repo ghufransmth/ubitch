@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="Popular Songs" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Hits Songs" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="New Songs" />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Ubeatz Playlist" />
+        <item
+            android:id="@+id/nav_category"
+            android:title="Category" />
+        <item
+            android:id="@+id/nav_trending"
+            android:title="Trending Topics" />
+
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
