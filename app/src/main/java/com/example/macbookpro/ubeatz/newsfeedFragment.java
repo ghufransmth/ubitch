@@ -2,6 +2,7 @@ package com.example.macbookpro.ubeatz;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.macbookpro.ubeatz.adapter.newsAdapter;
+import com.example.macbookpro.ubeatz.adapter.newsAdapterNew;
 import com.example.macbookpro.ubeatz.model.News;
 import com.example.macbookpro.ubeatz.model.Newsfeed;
 import com.example.macbookpro.ubeatz.response.responsenewsfeed;
@@ -27,15 +29,12 @@ import com.example.macbookpro.ubeatz.util.SharedPrefManager;
 import com.example.macbookpro.ubeatz.util.api.BaseApiService;
 import com.example.macbookpro.ubeatz.util.api.UtilsApi;
 import com.google.firebase.database.DatabaseReference;
-import com.volokh.danylo.visibility_utils.calculator.DefaultSingleItemCalculatorCallback;
-import com.volokh.danylo.visibility_utils.calculator.ListItemsVisibilityCalculator;
-import com.volokh.danylo.visibility_utils.calculator.SingleListViewItemActiveCalculator;
-import com.volokh.danylo.visibility_utils.scroll_utils.RecyclerViewItemPositionGetter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import im.ene.toro.widget.Container;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,7 +42,7 @@ import retrofit2.Response;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 
-public class newsfeedFragment extends Fragment implements newsAdapter.NewsfeedListener{
+public class newsfeedFragment extends Fragment implements newsAdapterNew.NewsfeedListener{
 
     private Button mainmenu;
     // [START define_database_reference]
@@ -51,9 +50,12 @@ public class newsfeedFragment extends Fragment implements newsAdapter.NewsfeedLi
     List<Newsfeed> newsfeeds;
     ArrayList<News> newsfeedsList;
     ListView listViewNewsfeed;
-    private newsAdapter adapter;
+    //private newsAdapter adapter;
+    newsAdapterNew adapter;
     EditText sessionID;
-    RecyclerView recyclerView;
+    //RecyclerView recyclerView;
+    Container container;
+    LinearLayoutManager layoutManager;
     TextView id;
     BaseApiService mApiService;
     SharedPrefManager sharedPrefManager;
@@ -109,8 +111,7 @@ public class newsfeedFragment extends Fragment implements newsAdapter.NewsfeedLi
 //
 //            }
 //        });
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-
+        //recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 //        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 //
 //            @Override
@@ -147,15 +148,29 @@ public class newsfeedFragment extends Fragment implements newsAdapter.NewsfeedLi
 
         sessionID.setText(sharedPrefManager.getSpId());
 
-        recyclerView.setHasFixedSize(true);
+        /*recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        recyclerView.setItemAnimator(new DefaultItemAnimator());*/
+        initContainer(view);
         getMyNewsFeedRequest();
 
 
         return view;
+    }
+
+    public void initContainer(View view)
+    {
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        layoutManager = new LinearLayoutManager(getActivity());
+        container = (Container) view.findViewById(R.id.player_container);
+        container.setLayoutManager(layoutManager);
     }
 
     public interface ListItem {
@@ -196,9 +211,13 @@ public class newsfeedFragment extends Fragment implements newsAdapter.NewsfeedLi
                 responsenewsfeed resource = response.body();
                 newsfeedsList = resource.datanews;
 
-                adapter = new newsAdapter(getActivity(), newsfeedsList, newsfeedFragment.this);
+                /*adapter = new newsAdapter(getActivity(), newsfeedsList, newsfeedFragment.this);
                 recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();*/
+
+                adapter = new newsAdapterNew(newsfeedsList,getApplicationContext(), newsfeedFragment.this);
+                container.setAdapter(adapter);
+
 
             }
 

@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.macbookpro.ubeatz"
-        minSdkVersion 15
+        minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -47,6 +47,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services:11.0.4'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
     implementation 'com.android.support:multidex:1.0.3'
+
+    implementation "im.ene.toro3:toro:3.0.0-beta1"
+    implementation "com.google.android.exoplayer:exoplayer:r2.4.3"
 }
 
 apply plugin: 'com.google.gms.google-services'
