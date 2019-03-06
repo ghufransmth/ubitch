@@ -2,6 +2,7 @@ package com.example.macbookpro.ubeatz;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,7 +54,7 @@ public class song_detail extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mPlayerAdapter.loadMedia(MEDIA_RES_ID);
+        //mPlayerAdapter.loadMedia(MEDIA_RES_ID);
         Log.d(TAG, "onStart: create MediaPlayer");
     }
 
@@ -173,7 +174,7 @@ public class song_detail extends AppCompatActivity {
         @Override
         public void onPositionChanged(int position) {
             if (!mUserIsSeeking) {
-                mSeekbarAudio.setProgress(position, true);
+                //mSeekbarAudio.setProgress(position, true);
                 Log.d(TAG, String.format("setPlaybackPosition: setProgress(%d)", position));
             }
         }

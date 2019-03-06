@@ -50,6 +50,7 @@ dependencies {
 
     implementation "im.ene.toro3:toro:3.0.0-beta1"
     implementation "com.google.android.exoplayer:exoplayer:r2.4.3"
+    implementation 'com.github.PierfrancescoSoffritti:AndroidYouTubePlayer:8.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
